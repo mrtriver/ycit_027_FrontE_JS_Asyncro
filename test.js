@@ -1,3 +1,0 @@
-//deneme
-
-console.log("Hi")
