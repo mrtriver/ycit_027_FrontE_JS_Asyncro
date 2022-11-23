@@ -1,0 +1,30 @@
+
+<html>
+<head>
+   
+</head>
+<body>
+    Hi
+    <button style="display:block; margin-top:1rem">Do Fetch()</button>
+</body>
+<script>
+    const btn = document.querySelector("button");
+     console.log("skopje",btn);
+
+     btn.onclick = function(){
+        console.log("This is my first API attempt"+ new Date())
+     }
+     //Alternatively
+    //  btn.addEventHandler("click",function(){})
+
+     //OR
+    //  btn.onclick=() =>{}
+
+    //Use fetch()Api to send an Http to our server
+    const result = fetch('http://localhost:3333/').then((res)=>res.json()); //(RES) HERE IS NOT THE SAME OBJECT IN THE SERVER 
+    //result.then((data)=> console.log(data));
+    result.then((data)=>{
+document.body.innerHTML = `<h1>Hello ${data.name}</h1>`}
+    );
+</script>
+</html>
